@@ -1,0 +1,83 @@
+body {
+  font-family: "Inter";
+  width: 1440px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  row-gap: 30px;
+}
+
+h2 {
+  margin: 30px 0px 60px 0px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.col-left {
+  width: 500px;
+}
+
+.col-right {
+  width: 500px;
+  height: 100%;
+}
+
+.post-title-input {
+  width: 500px;
+  padding-bottom: 60px;
+}
+
+.post-text-input {
+  width: 500px;
+  padding-bottom: 250px;
+}
+
+.post-text-input,
+.post-title-input {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 39px;
+}
+
+.new-posts-btn {
+  font-family: inherit;
+  box-sizing: border-box;
+  width: 500px;
+  height: 60px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 39px;
+  color: white;
+  background-color: #0094ff;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.post__data {
+  margin: 0px 0px 15px 0px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #0094ff;
+}
+
+.post__title {
+  margin: 0px 0px 15px 0px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+.post__text {
+  margin: 0px 0px 50px 0px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+}
