@@ -1,4 +1,5 @@
 body {
+  margin: 0 auto;
   font-family: "Inter";
   width: 1440px;
 }
@@ -38,12 +39,14 @@ h2 {
 
 .post-text-input,
 .post-title-input {
+  font-family: inherit;
   box-sizing: border-box;
   display: block;
   margin-bottom: 30px;
   font-size: 32px;
   font-weight: 400;
   line-height: 39px;
+  resize: none;
 }
 
 .new-posts-btn {
@@ -80,4 +83,16 @@ h2 {
   font-size: 25px;
   font-weight: 400;
   line-height: 30px;
+}
+
+.validationMessage {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #ff0000;
+}
+
+.validationMessage_hidden {
+  display: none;
 }

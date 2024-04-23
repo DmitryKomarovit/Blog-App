@@ -9,28 +9,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.css" />
-    <!--<link rel="stylesheet" href="./reset.css" />-->
   </head>
   <body>
     <div class="row">
       <div class="col-left">
         <h2>Новый пост</h2>
 
-        <input
+        <textarea
           id="inputId"
           class="js-post-title-input post-title-input"
           type="text"
           placeholder="Заголовок"
-        />
+        ></textarea>
 
-        <input
-          id="inputId"
+        <textarea
           class="js-post-text-input post-text-input"
-          type="text"
           placeholder="Напиши пост"
-        />
+          type="text"
+        ></textarea>
 
         <button class="js-new-post-btn new-posts-btn">Опубликовать</button>
+
+        <div
+          id="validationMessage"
+          class="js-validationMessage validationMessage validationMessage_hidden"
+        ></div>
+
+        <div
+          id="validationMessage"
+          class="js-validationMessage validationMessage validationMessage_hidden"
+        ></div>
       </div>
 
       <div class="col-right">
