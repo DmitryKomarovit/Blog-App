@@ -1,6 +1,6 @@
 const posts = [];
-const TITLE_VALIDATION_LIMIT = 50;
-const TEXT_VALIDATION_LIMIT = 200;
+const TITLE_VALIDATION_LIMIT = 10;
+const TEXT_VALIDATION_LIMIT = 20;
 
 const postTitleInputNode = document.querySelector(".js-post-title-input");
 const postTextInputNode = document.querySelector(".js-post-text-input");
@@ -14,6 +14,10 @@ newPostBtnNode.addEventListener("click", function () {
   addPost(postFromUser);
 
   redernPosts();
+
+  postTitleInputNode.value = "";
+  postTextInputNode.value = "";
+  newPostBtnNode.setAttribute("disabled", true);
 });
 
 postTitleInputNode.addEventListener("input", validation);
@@ -29,10 +33,22 @@ function validation() {
     validationMessage.classList.remove("validationMessage_hidden");
     return;
   }
+
   if (textLen > TEXT_VALIDATION_LIMIT) {
     validationMessage.innerText = `Длинна текста привыщает ${TEXT_VALIDATION_LIMIT} символов`;
     validationMessage.classList.remove("validationMessage_hidden");
     return;
+  }
+
+  if (
+    titleLen === 0 ||
+    textLen === 0 ||
+    titleLen > TITLE_VALIDATION_LIMIT ||
+    textLen > TEXT_VALIDATION_LIMIT
+  ) {
+    newPostBtnNode.setAttribute("disabled", true);
+  } else {
+    newPostBtnNode.removeAttribute("disabled");
   }
 
   validationMessage.classList.add("validationMessage_hidden");
@@ -42,10 +58,6 @@ function getPostFromUser() {
   const title = postTitleInputNode.value;
   const text = postTextInputNode.value;
 
-  if (!title || !text) {
-    return null;
-  }
-
   return {
     title: title,
     text: text,
@@ -53,7 +65,10 @@ function getPostFromUser() {
 }
 
 function addPost({ title, text }) {
-  posts.push({
+  let date = new Date();
+
+  posts.unshift({
+    date: date,
     title: title,
     text: text,
   });
@@ -65,13 +80,13 @@ function getPosts() {
 
 function redernPosts() {
   const posts = getPosts();
-  let date = new Date();
+
   let postsHTML = "";
 
   posts.forEach((post) => {
     postsHTML += `
     <div class= 'post'>
-      <p class='post__data'>${date.toLocaleString().slice(0, -3)}</p>
+      <p class='post__data'>${post.date.toLocaleString().slice(0, -3)}</p>
       <p class='post__title'>${post.title}</p>
       <p class='post__text'>${post.text}</p>
     </div>

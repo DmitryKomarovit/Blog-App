@@ -16,7 +16,6 @@
         <h2>Новый пост</h2>
 
         <textarea
-          id="inputId"
           class="js-post-title-input post-title-input"
           type="text"
           placeholder="Заголовок"
@@ -24,19 +23,19 @@
 
         <textarea
           class="js-post-text-input post-text-input"
-          placeholder="Напиши пост"
           type="text"
+          placeholder="Напиши пост"
         ></textarea>
 
-        <button class="js-new-post-btn new-posts-btn">Опубликовать</button>
+        <button id="js-new-post-btn" class="js-new-post-btn new-posts-btn">
+          Опубликовать
+        </button>
 
         <div
-          id="validationMessage"
           class="js-validationMessage validationMessage validationMessage_hidden"
         ></div>
 
         <div
-          id="validationMessage"
           class="js-validationMessage validationMessage validationMessage_hidden"
         ></div>
       </div>
