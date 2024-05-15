@@ -96,7 +96,3 @@ h2 {
 .validationMessage_hidden {
   display: none;
 }
-
-:disabled {
-  opacity: 0.7;
-}
